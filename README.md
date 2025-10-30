@@ -7,7 +7,8 @@ The [Dockerfile](Dockerfile) to build [Rstudio with geospatial layer](https://gi
 Run the container with Singularity:
 ```bash
 singularity pull docker://ghcr.io/dawiedotcom/rstudio-geospatial:latest
-PASSWORD='<make a temporary password>' singularity exec --scratch /run,/var/lib/rstudio-server --workdir tmp rstudio-geospatial_latest.sif rserver --auth-none=0 --auth-pam-helper-path=pam-helper --server-user=$USER
+mkdir workdir
+PASSWORD='<make a temporary password>' singularity exec --scratch /run,/var/lib/rstudio-server --workdir workdir rstudio-geospatial_latest.sif rserver --auth-none=0 --auth-pam-helper-path=pam-helper --server-user=$USER
 ```
 Visit [http://localhost:8787](http://localhost:8787) and login with your Linux user and the temporary password.
 
