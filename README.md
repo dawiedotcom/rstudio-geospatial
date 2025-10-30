@@ -1,15 +1,15 @@
 # Rstudio with geospatial
 
-The <Dockerfile> build [Rstudio with geospatial layer](https://github.com/rocker-org/rocker-versioned2).
+The [Dockerfile](Dockerfile) to build [Rstudio with geospatial layer](https://github.com/rocker-org/rocker-versioned2).
 
 ## Usage
 
-Run the container wit Singularity:
+Run the container with Singularity:
 ```bash
 singularity pull docker://ghcr.io/dawiedotcom/rstudio-geospatial:latest
 PASSWORD='<make a temporary password>' singularity exec --scratch /run,/var/lib/rstudio-server --workdir tmp rstudio-geospatial_latest.sif rserver --auth-none=0 --auth-pam-helper-path=pam-helper --server-user=$USER
 ```
-Visit <http://localhost:8787> and login with your Linux user and the temporary password.
+Visit [http://localhost:8787](http://localhost:8787) and login with your Linux user and the temporary password.
 
 ## Build
 
@@ -23,4 +23,4 @@ git push <new_tag_name>
 
 ## Licence
 
-See <LICENCE>.
+See [LICENCE](Licence).
